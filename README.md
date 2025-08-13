@@ -7,3 +7,4 @@ Known issues:
 -sell function is wonk af
 -need to update glowing symbol algo to include tail attack points
 -prayer flicking isn't perfect
+
