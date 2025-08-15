@@ -19,7 +19,7 @@ public class LootTask extends Task {
     @Override
     public boolean execute() {
         Pickable item = Pickables.query().ids(LOOT_IDS).results().nearest();
-        if (item==null) {
+        if (item==null || !Players.self().getPosition().fromInstance().within(HueyData.COMBAT_AREA)) {
             return false;
         }
         OrderTask.setTask("Looting");
@@ -30,4 +30,5 @@ public class LootTask extends Task {
         item.interact("Take");
         return true;
     }
+
 }
